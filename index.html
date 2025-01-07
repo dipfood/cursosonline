@@ -238,7 +238,7 @@
                 <img src="conteudo4foto.png" alt="Documento 4">
             </div>
             <h3>Dominando o Marketing Digital</h3>
-            <p>Clique para abrir o Quarto CursoS</p>
+            <p>Clique para abrir o Quarto Curso</p>
         </div>
     </div>
 </div>
@@ -251,21 +251,29 @@
 </div>
 
 <script>
+const validUsers = [
+    { username: 'admin', password: '123456' },
+    { username: 'user1', password: 'abc123' },
+    { username: 'user2', password: 'qwerty' },
+    { username: 'cliente', password: 'cliente123' }
+];
+
 document.getElementById('login-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    const validUsername = 'admin';
-    const validPassword = '123456';
-    
     const errorMessage = document.getElementById('error-message');
     const loginSection = document.getElementById('login-section');
     const feedSection = document.getElementById('feed-section');
     const mainHeader = document.getElementById('main-header');
     
-    if(username === validUsername && password === validPassword) {
+    const isValidUser = validUsers.some(user => 
+        user.username === username && user.password === password
+    );
+    
+    if(isValidUser) {
         loginSection.style.display = 'none';
         feedSection.style.display = 'block';
         mainHeader.style.display = 'block';
