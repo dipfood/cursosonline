@@ -1,5 +1,6 @@
 <html><head><base href="." />
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login de Acesso</title>
 <style>
     body {
@@ -11,27 +12,38 @@
 
     .login-container {
         background: white;
-        padding: 40px;
+        padding: 20px;
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        width: 100%;
+        width: 90%;
         max-width: 400px;
-        margin: 50px auto;
+        margin: 20px auto;
     }
 
     .feed-container {
         display: none;
         background: white;
-        padding: 20px;
-        max-width: 800px;
-        margin: 20px auto;
+        padding: 15px;
+        width: 95%;
+        margin: 10px auto;
     }
 
     .feed-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 20px;
-        padding: 20px;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    @media (min-width: 768px) {
+        .feed-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        
+        .login-container {
+            padding: 40px;
+            margin: 50px auto;
+        }
     }
 
     .feed-item {
@@ -50,6 +62,7 @@
     .feed-item h3 {
         margin: 10px 0;
         color: #333;
+        font-size: 16px;
     }
 
     .feed-item p {
@@ -59,7 +72,7 @@
 
     .post-content {
         width: 100%;
-        height: 200px;
+        height: 180px;
         background: #f5f5f5;
         border-radius: 8px;
         margin-bottom: 10px;
@@ -77,34 +90,35 @@
 
     .login-header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .login-header svg {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 15px;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
     }
 
     h1 {
         color: #333;
         margin: 0;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .form-group {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     label {
         display: block;
         margin-bottom: 5px;
         color: #555;
+        font-size: 14px;
     }
 
     input {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
         border: 1px solid #ddd;
         border-radius: 5px;
         font-size: 16px;
@@ -113,7 +127,7 @@
 
     button {
         width: 100%;
-        padding: 12px;
+        padding: 14px;
         background: #2a5298;
         border: none;
         border-radius: 5px;
@@ -132,19 +146,24 @@
         text-align: center;
         margin-top: 10px;
         display: none;
+        font-size: 14px;
     }
 
     .header {
         background: white;
-        padding: 15px;
+        padding: 12px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         display: none;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
     .header h2 {
         margin: 0;
         color: #2a5298;
         text-align: center;
+        font-size: 18px;
     }
 
     .pdf-viewer {
@@ -153,7 +172,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.8);
+        background: rgba(0,0,0,0.9);
         display: none;
         justify-content: center;
         align-items: center;
@@ -161,8 +180,8 @@
     }
 
     .pdf-container {
-        width: 90%;
-        height: 90%;
+        width: 95%;
+        height: 95%;
         background: white;
         position: relative;
     }
@@ -174,10 +193,12 @@
         background: #ff3333;
         color: white;
         border: none;
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
         border-radius: 50%;
         cursor: pointer;
+        font-size: 20px;
+        z-index: 1001;
     }
 </style>
 </head>
